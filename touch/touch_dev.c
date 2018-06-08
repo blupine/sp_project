@@ -4,14 +4,15 @@
 #include <linux/delay.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
+#include <linux/delay.h>
 
-#define GPIO1 40//GPIO.29
-#define GPIO2 38//GPIO.28
-#define GPIO3 36//GPIO.27
-#define GPIO4 32//GPIO.26
+#define GPIO1 20//GPIO.29
+#define GPIO2 16//GPIO.28
+#define GPIO3 24//GPIO.27
+#define GPIO4 23//GPIO.26
 
 #define DEV_NAME "touch_dev"
-#define DEV_NUM 250
+#define DEV_NUM 260
 
 MODULE_LICENSE("GPL");
 
@@ -22,10 +23,10 @@ int touch_open(struct inode* pinode, struct file* pfile){
 	gpio_request(GPIO3, "GPIO3");
 	gpio_request(GPIO4, "GPIO4");
 
-	gpio_direction_input(GPIO1);
-	gpio_direction_input(GPIO2);
-	gpio_direction_input(GPIO3);
-	gpio_direction_input(GPIO4);
+	if(gpio_direction_input(GPIO1) != 0) printk("err GPIO1\n");
+	if(gpio_direction_input(GPIO2) != 0) printk("err GPIO1\n");
+	if(gpio_direction_input(GPIO3) != 0) printk("err GPIO1\n");
+	if(gpio_direction_input(GPIO4) != 0) printk("err GPIO1\n");
 
 	return 0;
 }
@@ -41,13 +42,20 @@ int touch_close(struct inode* pinode, struct file* pfile){
 
 ssize_t touch_read(struct file* pfile, char __user* buffer, size_t length, loff_t* offset){
 	printk("Read touch_dev\n");
-	char buf[4];
-	buf[0] = (char)gpio_get_value(GPIO1);
-	buf[1] = (char)gpio_get_value(GPIO2);
-	buf[2] = (char)gpio_get_value(GPIO3);
-	buf[3] = (char)gpio_get_value(GPIO4);
-
-	copy_to_user(buffer,buf,length);
+	char* buf;
+	buf = kmalloc(4, GFP_KERNEL);
+	gpio_get_value(GPIO1) == 1 ?	buf[0] = '1' : buf[0] == '0';
+	gpio_get_value(GPIO2) == 1 ?	buf[1] = '1' : buf[1] == '0';
+	gpio_get_value(GPIO3) == 1 ?	buf[2] = '1' : buf[2] == '0';
+	gpio_get_value(GPIO4) == 1 ?	buf[3] = '1' : buf[3] == '0';
+	printk("%c %c %c %c\n",buf[0],buf[1],buf[2],buf[3]);
+	/**/
+/*	buf[0] = 1;
+	buf[1] = 1;
+	buf[2] = 1;
+	buf[3] = 1;
+*/
+	copy_to_user(buffer,buf,4);
 
 	return 0;
 }
@@ -55,6 +63,7 @@ ssize_t touch_read(struct file* pfile, char __user* buffer, size_t length, loff_
 struct file_operations fop = {
 	.owner = THIS_MODULE,
 	.open = touch_open,
+	.read = touch_read,
 	.release = touch_close,
 };
 

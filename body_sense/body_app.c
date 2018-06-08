@@ -8,16 +8,17 @@
 #define DEV_PATH "/dev/body_dev"
 
 int main(){
-	FILE* fd = 0;
+	int fd = 0;
 	char buf[1024];
 
-	fd = fopen(DEV_PATH, "r");
-	if(fd == NULL){
+	fd = open(DEV_PATH, O_RDONLY);
+	if(fd == -1){
 		fprintf(stderr,"fopen() error : %s\n",strerror(errno));
 		exit(1);
 	}
-
-	while(fread(&buf,1,1,fd) != 0){
-		buf[0] == '1' ? printf("sensed\n") : NULL;
+	while(1){
+		read(fd,buf,1);
+		buf[0] == '1' ? printf("sensed\n") : printf("---\n");
+		sleep(3);
 	}
 }
