@@ -5,6 +5,7 @@
 void* body(){
 	int fd = 0;
 	char buf[1024];
+	int sense = 0;
 
 	fd = open(DEV_PATH, O_RDONLY);
 	sleep(5);
@@ -15,7 +16,7 @@ void* body(){
 	}
 	while(1){
 		read(fd,buf,1);
-		buf[0] == '1' ? printf("sensed\n") : NULL;
+		sense = (buf[0] == '1' ? 1 : 0);//printf("sensed\n") : NULL;
 		sleep(3);
 	}
 }

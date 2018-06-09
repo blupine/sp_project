@@ -3,6 +3,7 @@
 int main(){
 	int chk = 0;
 	pthread_t tid[2];
+	int status;
 
 	if(wiringPiSetup() == -1)
 		return;

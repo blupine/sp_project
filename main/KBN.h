@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include <softPwm.h>
 #include <pthread.h>
+#include <sys/wait.h>
 
 void* body();
 void* touch();
