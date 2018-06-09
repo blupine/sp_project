@@ -5,7 +5,7 @@
 void* body(){
 	int fd = 0;
 	char buf[1024];
-
+	int test=0;
 	fd = open(DEV_PATH, O_RDONLY);
 	sleep(5);
 
@@ -15,7 +15,11 @@ void* body(){
 	}
 	while(1){
 		read(fd,buf,1);
-		buf[0] == '1' ? printf("sensed\n") : NULL;
+		test = (buf[0] == '1' ? 0 : ++test);
+		if(test == 1000){
+			servo();
+			power2(0);
+		}
 		sleep(3);
 	}
 }
