@@ -13,9 +13,9 @@ void* touch(){
 		read(fd,buf, 4);
 	//	printf("%d%d%d%d\n",buf[0],buf[1],buf[2],buf[3]);
 		
-		buf[0] == '1' ? printf("1\n") : NULL;
-		buf[1] == '1' ? printf("2\n") : NULL;
-		buf[2] == '1' ? printf("3\n") : NULL;
+		buf[0] == '1' ? servo() : NULL;
+		buf[1] == '1' ? power2(1) : NULL;
+		buf[2] == '1' ? power2(0) : NULL;
 		buf[3] == '1' ? printf("4\n") : NULL;
 		sleep(1);	
 	/*

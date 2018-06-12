@@ -12,5 +12,6 @@
 void* body();
 void* touch();
 void power();
+void power2(int);
 void servo();
 

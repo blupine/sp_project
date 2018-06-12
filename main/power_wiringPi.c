@@ -13,3 +13,10 @@ void power(){
 	if(!strcmp(buf,"1"))	digitalWrite(GPIO_POWER, 1);
 	else if(!strcmp(buf, "2"))	digitalWrite(GPIO_POWER, 0);
 }
+
+void power2(int chk){
+
+	pinMode(GPIO_POWER, OUTPUT);
+
+	digitalWrite(GPIO_POWER, chk);
+}
