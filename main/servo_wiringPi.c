@@ -8,6 +8,6 @@ void servo(){
 	delay(600);
 	softPwmWrite(PIN, 25);
 	delay(600);
-
+	servo_chk++;
 	return;
 }

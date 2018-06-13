@@ -14,9 +14,10 @@ void power(){
 	else if(!strcmp(buf, "2"))	digitalWrite(GPIO_POWER, 0);
 }
 
-void power2(int chk){
+void power2(){
 
 	pinMode(GPIO_POWER, OUTPUT);
 
-	digitalWrite(GPIO_POWER, chk);
+	power_chk%2 == 0 ? digitalWrite(GPIO_POWER, 1) : digitalWrite(GPIO_POWER, 0);
+	power_chk++;
 }

@@ -8,9 +8,12 @@
 #include <softPwm.h>
 #include <pthread.h>
 
+int power_chk = 0;
+int servo_chk = 0;
+
 void* body();
 void* touch();
 void power();
-void power2(int);
+void power2();
 void servo();
 

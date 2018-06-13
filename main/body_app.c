@@ -17,8 +17,11 @@ void* body(){
 		read(fd,buf,1);
 		test = (buf[0] == '1' ? 0 : ++test);
 		if(test == 1000){
-			servo();
-			power2(0);
+			servo_chk%2 == 1 ? servo() : NULL;
+			power_chk%2 == 1 ? power2() : NULL;
+		}
+		else if(test == 0){
+			printf("sensed!\n");
 		}
 		sleep(3);
 	}
