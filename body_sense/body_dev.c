@@ -43,7 +43,7 @@ struct file_operations fop = {
 };
 
 int __init body_init(void){
-	printk(KERN_ALERT "INIT body_dev\n");
+	printk(KERN_ALERT "INIT body_dev\nmajor 261\n");
 	register_chrdev(DEV_NUM, DEV_NAME, &fop);
 	return 0;
 }

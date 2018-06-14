@@ -25,15 +25,15 @@ __attribute__((section("__versions"))) = {
 	{ 0x5634976f, __VMLINUX_SYMBOL_STR(module_layout) },
 	{ 0x6bc3fbc0, __VMLINUX_SYMBOL_STR(__unregister_chrdev) },
 	{ 0x902d59c3, __VMLINUX_SYMBOL_STR(__register_chrdev) },
-	{ 0xf4fa543b, __VMLINUX_SYMBOL_STR(arm_copy_to_user) },
-	{ 0xdfc3667c, __VMLINUX_SYMBOL_STR(gpiod_get_raw_value) },
-	{ 0x1ccf3796, __VMLINUX_SYMBOL_STR(kmem_cache_alloc_trace) },
-	{ 0x3b249bf6, __VMLINUX_SYMBOL_STR(kmalloc_caches) },
+	{ 0xfa2a45e, __VMLINUX_SYMBOL_STR(__memzero) },
+	{ 0x1e047854, __VMLINUX_SYMBOL_STR(warn_slowpath_fmt) },
+	{ 0xb95d619e, __VMLINUX_SYMBOL_STR(gpiod_set_raw_value) },
+	{ 0x28cc25db, __VMLINUX_SYMBOL_STR(arm_copy_from_user) },
 	{ 0xfe990052, __VMLINUX_SYMBOL_STR(gpio_free) },
 	{ 0x2e5810c6, __VMLINUX_SYMBOL_STR(__aeabi_unwind_cpp_pr1) },
-	{ 0x49c171e2, __VMLINUX_SYMBOL_STR(gpiod_direction_input) },
+	{ 0xc6155826, __VMLINUX_SYMBOL_STR(gpiod_direction_output_raw) },
 	{ 0xba49c8d7, __VMLINUX_SYMBOL_STR(gpio_to_desc) },
-	{ 0x47229b5c, __VMLINUX_SYMBOL_STR(gpio_request) },
+	{ 0x403f9529, __VMLINUX_SYMBOL_STR(gpio_request_one) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
 	{ 0xb1ad28e0, __VMLINUX_SYMBOL_STR(__gnu_mcount_nc) },
 };
@@ -44,4 +44,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "FB44C8E42ACBEB5CA49EF60");
+MODULE_INFO(srcversion, "F6EF35D5E3FD6412C84D5BA");

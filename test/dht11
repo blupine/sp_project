@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python3 /home/pi/systemprogramming/dht11/DHT11_Python/dht11_example.py

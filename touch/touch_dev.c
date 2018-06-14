@@ -6,10 +6,10 @@
 #include <linux/uaccess.h>
 #include <linux/delay.h>
 
-#define GPIO1 20//GPIO.29
-#define GPIO2 16//GPIO.28
-#define GPIO3 24//GPIO.27
-#define GPIO4 23//GPIO.26
+#define GPIO1 20//GPIO.28
+#define GPIO2 16//GPIO.27
+#define GPIO3 24//GPIO.5
+#define GPIO4 23//GPIO.4
 
 #define DEV_NAME "touch_dev"
 #define DEV_NUM 260
@@ -68,7 +68,7 @@ struct file_operations fop = {
 };
 
 int __init touch_init(void){
-	printk(KERN_ALERT "INIT touch_dev\n");
+	printk(KERN_ALERT "INIT touch_dev\nmajor 260\n");
 	register_chrdev(DEV_NUM, DEV_NAME, &fop);
 	return 0;
 }

@@ -4,10 +4,10 @@
 
 #define LCD_RS 11
 #define LCD_E 10
-#define LCD_D4 6
-#define LCD_D5 5
-#define LCD_D6 4
-#define LCD_D7 1
+#define LCD_D4 21//5GPIO.24
+#define LCD_D5 22//6GPIO.23
+#define LCD_D6 23//13GPIO.22
+#define LCD_D7 24//19GPIO.21 1 -> 24
 
 int main(){
 	int lcd;
@@ -19,7 +19,7 @@ int main(){
 	}
 
 	lcdPosition(lcd,0,0);
-	lcdPuts(lcd, "HELLO WORLD");
+	lcdPuts(lcd, "LOVE Min A");
 
 	getchar();
 }

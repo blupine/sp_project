@@ -1,8 +1,10 @@
 #include "KBN.h"
 
-#define GPIO_POWER 25//GPIO.25
+#define GPIO_POWER 6//GPIO.6
 
 void power(){
+	if(sleep_on == 1) return;
+       
 	char buf[1024];
 
 	pinMode(GPIO_POWER, OUTPUT);
@@ -15,6 +17,7 @@ void power(){
 }
 
 void power2(){
+	if(sleep_on == 1) return;
 
 	pinMode(GPIO_POWER, OUTPUT);
 

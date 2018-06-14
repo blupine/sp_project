@@ -9,9 +9,9 @@ int main(){
 
 	softPwmCreate(PIN, 0, 200);
 	softPwmWrite(PIN, 5);
-	delay(1200);
+	delay(600);
 	softPwmWrite(PIN, 25);
-	delay(1200);
+	delay(600);
 
 	return 0;
 }

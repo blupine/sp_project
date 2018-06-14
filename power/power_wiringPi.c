@@ -2,7 +2,7 @@
 #include <wiringPi.h>
 #include <string.h>
 
-#define GPIO_POWER 25//GPIO.25
+#define GPIO_POWER 6//GPIO.6
 
 void main(){
 	char buf[1024];
