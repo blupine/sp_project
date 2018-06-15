@@ -17,9 +17,9 @@ int main(){
 		printf("lcd init failed!\n");
 		return -1;
 	}
-
+	lcdClear(lcd);
 	lcdPosition(lcd,0,0);
-	lcdPuts(lcd, "LOVE Min A");
-
+	lcdPuts(lcd, "system program");
+	delay(1000);
 	getchar();
 }

@@ -86,7 +86,7 @@ void bme280() {
 //    h, p, t, a, (int)time(NULL));
 
   char temp[1024]="";
-  sprintf(temp,"humidity %.2f pressure %.2f temperature %.2f",h,p,t);
+  sprintf(temp,"pressure:%.2fhPa temperature:%.2f",p,t);
   pthread_t tid;
   pthread_attr_t attr;
 

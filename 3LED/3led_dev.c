@@ -6,9 +6,9 @@
 #include <linux/uaccess.h>
 #include <linux/delay.h>
 
-#define GPIO_R 19//GPIO.24
-#define GPIO_G 13//GPIO.23
-#define GPIO_B 6//GPIO.22
+#define GPIO_R 22//GPIO.24
+#define GPIO_G 27//GPIO.23
+#define GPIO_B 17//GPIO.22
 
 #define DEV_NAME "3led_dev"
 #define DEV_NUM 262

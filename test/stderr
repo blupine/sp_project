@@ -1,0 +1,11 @@
+  File "<string>", line 1
+    while True:
+              ^
+SyntaxError: unexpected EOF while parsing
+  File "<string>", line 1
+    if result.is_valid():
+                        ^
+SyntaxError: unexpected EOF while parsing
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+KeyboardInterrupt

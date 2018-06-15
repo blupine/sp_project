@@ -10,6 +10,13 @@ touch
   gpio.5  -> BCM.24
   gpio.4  -> BCM.23
 3led
-: gpio.24 -> 19
-  gpio.23 -> 13
-  gpio.22 -> 6
+: gpio.24 -> 22 - R
+  gpio.23 -> 27 - G
+  gpio.22 -> 17 - B
+lcd
+: gpio.21 -> D4
+  gpio.22
+  gpio.23
+  gpio.24 -> D7
+  RS -> 11
+  E  -> 10
